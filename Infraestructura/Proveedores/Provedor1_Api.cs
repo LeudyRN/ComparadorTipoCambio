@@ -17,7 +17,7 @@ public class Provedor1_Api : IProvedorTipoCambio
     {
         try
         {
-            Console.WriteLine("Proveedor1_Api: Simulando respuesta...");
+            Console.WriteLine("Provedor1_Api: Simulando respuesta...");
             await Task.Delay(100);
 
             decimal simulatedRate = 0.80m;
@@ -27,7 +27,7 @@ public class Provedor1_Api : IProvedorTipoCambio
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Proveedor1_Api: Error al obtener tipo de cambio: {ex.Message}");
+            Console.WriteLine($"Provedor1_Api: Error al obtener tipo de cambio: {ex.Message}");
             return null;
         }
     }
