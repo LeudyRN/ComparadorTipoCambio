@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ComparadorTipoCambio")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+56824cf29ab1363b6acfa4be1fa7728894e9036c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c41519f8fe46224a0727a58611cdd71cd27c50e6")]
 [assembly: System.Reflection.AssemblyProductAttribute("ComparadorTipoCambio")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ComparadorTipoCambio")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
