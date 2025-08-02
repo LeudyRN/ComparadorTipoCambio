@@ -1,5 +1,9 @@
 using Dominio.Interfaces;
 using Dominio.Modelos;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System;
 
 namespace App.CasosdeUso;
 
@@ -15,7 +19,7 @@ public class ObtenerMejorTipoCambio
         var mejoresResultados = resultados
             .Where(r => r != null)
             .Cast<RespuestaCambio>()
-            .OrderBy(r => r.MontoConvertido)
+            .OrderByDescending(r => r.MontoConvertido)
             .ToList();
 
         if (!mejoresResultados.Any())

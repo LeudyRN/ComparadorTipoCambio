@@ -20,7 +20,7 @@ public class Proveedor1_Api : IProvedorTipoCambio
             Console.WriteLine("Proveedor1_Api: Simulando respuesta...");
             await Task.Delay(100);
 
-            decimal simulatedRate = 0.85m;
+            decimal simulatedRate = 0.80m;
             decimal montoConvertido = solicitud.Monto * simulatedRate;
 
             return new RespuestaCambio("API1", montoConvertido);
