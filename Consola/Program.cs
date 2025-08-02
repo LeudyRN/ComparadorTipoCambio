@@ -8,7 +8,7 @@ var solicitud = new SolicitudCambio("USD", "EUR", 3000);
 
 var proveedores = new List<IProvedorTipoCambio>
 {
-    new Proveedor1_Api(http),
+    new Provedor1_Api(http),
     new Provedor2_Api(http),
     new Provedor3_Api(http)
 };

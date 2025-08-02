@@ -4,11 +4,11 @@ using System.Net.Http.Json;
 
 namespace Infraestructura.Proveedores;
 
-public class Proveedor1_Api : IProvedorTipoCambio
+public class Provedor1_Api : IProvedorTipoCambio
 {
     private readonly HttpClient _httpClient;
 
-    public Proveedor1_Api(HttpClient httpClient)
+    public Provedor1_Api(HttpClient httpClient)
     {
         _httpClient = httpClient;
     }
