@@ -1,3 +1,4 @@
-namespace Dominio.Modelos;
-
-public record SolicitudCambio(string MonedaOrigen, string MonedaDestino, decimal Monto);
+namespace Dominio.Modelos
+{
+    public record SolicitudCambio(string MonedaOrigen, string MonedaDestino, decimal Monto);
+}

@@ -17,23 +17,18 @@ public class Provedor3_Api : IProvedorTipoCambio
     {
         try
         {
-            var cuerpo = new
-            {
-                sourceCurrency = solicitud.MonedaOrigen,
-                targetCurrency = solicitud.MonedaDestino,
-                quantity = solicitud.Monto
-            };
+            Console.WriteLine("Provedor3_Api: Simulando respuesta...");
+            await Task.Delay(200);
 
-            var respuesta = await _httpClient.PostAsJsonAsync("https://api3.com", cuerpo);
-            respuesta.EnsureSuccessStatusCode();
+            decimal simulatedRate = 0.84m;
+            decimal montoConvertido = solicitud.Monto * simulatedRate;
 
-            var json = await respuesta.Content.ReadFromJsonAsync<RespuestaApi3>();
-
-            return new RespuestaCambio("API3", json!.data.total * solicitud.Monto);
+            return new RespuestaCambio("API3", montoConvertido);
         }
-        catch
+        catch (Exception ex)
         {
-            return null; // Manejo de errores simple, se puede mejorar
+            Console.WriteLine($"Provedor3_Api: Error al obtener tipo de cambio: {ex.Message}");
+            return null;
         }
     }
 
@@ -42,11 +37,9 @@ public class Provedor3_Api : IProvedorTipoCambio
         public int statusCode { get; set; }
         public string message { get; set; } = "";
         public Datos data { get; set; } = new();
-        // Asumiendo que el exchangeRate se obtiene de data.total
         public decimal exchangeRate => data.total;
     }
 
-    // CAMBIO: Hacer la clase Datos pública
     public class Datos
     {
         public decimal total { get; set; }

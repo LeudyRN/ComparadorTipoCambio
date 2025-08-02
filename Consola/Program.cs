@@ -1,19 +1,19 @@
-﻿using App.CasosdeUso;
-using Dominio.Modelos;
+﻿using Dominio.Modelos;
 using Infraestructura.Proveedores;
 using Dominio.Interfaces;
+using App.CasosdeUso;
 
 var http = new HttpClient();
 var solicitud = new SolicitudCambio("USD", "EUR", 3000);
 
 var proveedores = new List<IProvedorTipoCambio>
 {
-    new Provedor1_Api(http),
+    new Proveedor1_Api(http),
     new Provedor2_Api(http),
     new Provedor3_Api(http)
 };
 
-var casoUso = new ObtenerMejorOferta();
+var casoUso = new ObtenerMejorTipoCambio();
 var mejorOferta = await casoUso.EjecutarAsync(solicitud, proveedores);
 
 if (mejorOferta != null)

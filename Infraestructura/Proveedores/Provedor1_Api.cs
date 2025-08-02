@@ -4,11 +4,11 @@ using System.Net.Http.Json;
 
 namespace Infraestructura.Proveedores;
 
-public class Provedor1_Api : IProvedorTipoCambio
+public class Proveedor1_Api : IProvedorTipoCambio
 {
     private readonly HttpClient _httpClient;
 
-    public Provedor1_Api(HttpClient httpClient)
+    public Proveedor1_Api(HttpClient httpClient)
     {
         _httpClient = httpClient;
     }
@@ -17,17 +17,18 @@ public class Provedor1_Api : IProvedorTipoCambio
     {
         try
         {
-            var cuerpo = new { from = solicitud.MonedaOrigen, to = solicitud.MonedaDestino, value = solicitud.Monto };
-            // CAMBIO: Usar _httpClient y respuesta
-            var respuesta = await _httpClient.PostAsJsonAsync("https://api.provedor1.com", cuerpo);
-            respuesta.EnsureSuccessStatusCode(); // CAMBIO: Usar respuesta
+            Console.WriteLine("Proveedor1_Api: Simulando respuesta...");
+            await Task.Delay(100);
 
-            var json = await respuesta.Content.ReadFromJsonAsync<RespuestaApi1>();
-            return new RespuestaCambio("API1", json!.rate * solicitud.Monto);
+            decimal simulatedRate = 0.85m;
+            decimal montoConvertido = solicitud.Monto * simulatedRate;
+
+            return new RespuestaCambio("API1", montoConvertido);
         }
-        catch
+        catch (Exception ex)
         {
-            return null; // Manejo de errores simple, se puede mejorar
+            Console.WriteLine($"Proveedor1_Api: Error al obtener tipo de cambio: {ex.Message}");
+            return null;
         }
     }
 

@@ -3,25 +3,26 @@ using Dominio.Modelos;
 
 namespace App.CasosdeUso;
 
-public class ObtenerMejorOferta
+public class ObtenerMejorTipoCambio
 {
-  public async Task<RespuestaCambio?> EjecutarAsync(
-      SolicitudCambio solicitud,
-      IEnumerable<IProvedorTipoCambio> proveedores)
-  {
-    var tareas = proveedores.Select(p => p.ObtenerTipoCambioAsync(solicitud));
-    var resultados = await Task.WhenAll(tareas);
-
-    var mejorOferta = resultados
-        .Where(r => r != null)
-        .OrderBy(r => r!.MontoConvertido)
-        .FirstOrDefault();
-
-    if (mejorOferta == null)
+    public async Task<RespuestaCambio> EjecutarAsync(
+        SolicitudCambio solicitud,
+        IEnumerable<IProvedorTipoCambio> proveedores)
     {
-      throw new Exception("Ningun Proveedor respondio");
-    }
+        var tareas = proveedores.Select(p => p.ObtenerTipoCambioAsync(solicitud));
+        var resultados = await Task.WhenAll(tareas);
 
-    return mejorOferta;
-  }
+        var mejoresResultados = resultados
+            .Where(r => r != null)
+            .Cast<RespuestaCambio>()
+            .OrderBy(r => r.MontoConvertido)
+            .ToList();
+
+        if (!mejoresResultados.Any())
+        {
+            throw new Exception("Ningún proveedor respondió con una tasa válida.");
+        }
+
+        return mejoresResultados.First();
+    }
 }

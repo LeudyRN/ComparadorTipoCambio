@@ -1,0 +1,15 @@
+C:\Users\LeudyRN\OneDrive\Escritorio\ComparadorTipoCambio\bin\Debug\net9.0\ComparadorTipoCambio.exe
+C:\Users\LeudyRN\OneDrive\Escritorio\ComparadorTipoCambio\bin\Debug\net9.0\ComparadorTipoCambio.deps.json
+C:\Users\LeudyRN\OneDrive\Escritorio\ComparadorTipoCambio\bin\Debug\net9.0\ComparadorTipoCambio.runtimeconfig.json
+C:\Users\LeudyRN\OneDrive\Escritorio\ComparadorTipoCambio\bin\Debug\net9.0\ComparadorTipoCambio.dll
+C:\Users\LeudyRN\OneDrive\Escritorio\ComparadorTipoCambio\bin\Debug\net9.0\ComparadorTipoCambio.pdb
+C:\Users\LeudyRN\OneDrive\Escritorio\ComparadorTipoCambio\obj\Debug\net9.0\ComparadorTipoCambio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LeudyRN\OneDrive\Escritorio\ComparadorTipoCambio\obj\Debug\net9.0\ComparadorTipoCambio.AssemblyInfoInputs.cache
+C:\Users\LeudyRN\OneDrive\Escritorio\ComparadorTipoCambio\obj\Debug\net9.0\ComparadorTipoCambio.AssemblyInfo.cs
+C:\Users\LeudyRN\OneDrive\Escritorio\ComparadorTipoCambio\obj\Debug\net9.0\ComparadorTipoCambio.csproj.CoreCompileInputs.cache
+C:\Users\LeudyRN\OneDrive\Escritorio\ComparadorTipoCambio\obj\Debug\net9.0\ComparadorTipoCambio.sourcelink.json
+C:\Users\LeudyRN\OneDrive\Escritorio\ComparadorTipoCambio\obj\Debug\net9.0\ComparadorTipoCambio.dll
+C:\Users\LeudyRN\OneDrive\Escritorio\ComparadorTipoCambio\obj\Debug\net9.0\refint\ComparadorTipoCambio.dll
+C:\Users\LeudyRN\OneDrive\Escritorio\ComparadorTipoCambio\obj\Debug\net9.0\ComparadorTipoCambio.pdb
+C:\Users\LeudyRN\OneDrive\Escritorio\ComparadorTipoCambio\obj\Debug\net9.0\ComparadorTipoCambio.genruntimeconfig.cache
+C:\Users\LeudyRN\OneDrive\Escritorio\ComparadorTipoCambio\obj\Debug\net9.0\ref\ComparadorTipoCambio.dll

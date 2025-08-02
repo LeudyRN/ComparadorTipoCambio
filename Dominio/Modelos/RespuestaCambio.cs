@@ -1,3 +1,4 @@
-namespace Dominio.Modelos;
-
-public record RespuestaCambio(string Proveedor, decimal MontoConvertido);
+namespace Dominio.Modelos
+{
+    public record RespuestaCambio(string Proveedor, decimal MontoConvertido);
+}

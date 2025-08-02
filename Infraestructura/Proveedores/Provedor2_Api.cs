@@ -17,26 +17,18 @@ public class Provedor2_Api : IProvedorTipoCambio
     {
         try
         {
-            var xml = new XElement("XML",
-                new XElement("From", solicitud.MonedaOrigen),
-                new XElement("To", solicitud.MonedaDestino),
-                new XElement("Amount", solicitud.Monto)
-            );
+            Console.WriteLine("Provedor2_Api: Simulando respuesta...");
+            await Task.Delay(150);
 
-            var contenido = new StringContent(xml.ToString(), System.Text.Encoding.UTF8, "application/xml");
-            var respuesta = await _httpClient.PostAsync("https://api.provedor2.com", contenido);
-            respuesta.EnsureSuccessStatusCode();
+            decimal simulatedRate = 0.86m;
+            decimal montoConvertido = solicitud.Monto * simulatedRate;
 
-            var contenidoTexto = await respuesta.Content.ReadAsStringAsync();
-            var xmlRespuesta = XElement.Parse(contenidoTexto);
-            // CAMBIO: Usar .Value para obtener el contenido del elemento
-            var total = decimal.Parse(xmlRespuesta.Element("Result")!.Value);
-
-            return new RespuestaCambio("API2", total);
+            return new RespuestaCambio("API2", montoConvertido);
         }
-        catch
+        catch (Exception ex)
         {
-            return null; // Manejo de errores simple, se puede mejorar
+            Console.WriteLine($"Provedor2_Api: Error al obtener tipo de cambio: {ex.Message}");
+            return null;
         }
     }
 }
